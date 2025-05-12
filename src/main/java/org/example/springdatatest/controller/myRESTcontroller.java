@@ -23,19 +23,22 @@ public class myRESTcontroller {
         Employee employee = service.getEmployee(id);
         return employee;
     }
-// GET api/employees/3
-    @PostMapping("/employees")
-    public Employee addNewEmployee(@RequestBody Employee employee){
-       return service.addEmployee(employee);
 
-    }
-    @PutMapping("/employees")
-    public Employee updateNewEmployee(@RequestBody Employee employee){
+    // GET api/employees/3
+    @PostMapping("/employees")
+    public Employee addNewEmployee(@RequestBody Employee employee) {
         return service.addEmployee(employee);
 
     }
+
+    @PutMapping("/employees")
+    public Employee updateNewEmployee(@RequestBody Employee employee) {
+        return service.addEmployee(employee);
+
+    }
+
     @DeleteMapping("/employees/{id}")
-    public String deleteEmployee(@PathVariable int id){
+    public String deleteEmployee(@PathVariable int id) {
         Employee employee = service.getEmployee(id);
         service.deleteEmployee(id);
         return "Employee with id=" + id + "was deleted";
